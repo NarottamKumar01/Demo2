@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image:url(joinus3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input:focus{
+            background-color: blueviolet;
+        }
+        input[type="submit"]:hover
+        {
+            background-color: aqua;
+            transform: scale(1.5);
+        }
+        input{
+            border-radius: 5px;
+            border: 3px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function data()
+        {
+        var a=document.getElementById("n1").value;
+        var b=document.getElementById("n2").value;
+        var c=document.getElementById("n3").value;
+        var d=document.getElementById("n4").value;
+        if(a==""|| b==""|| c==""|| d=="")
+        {
+            alert("all field are mandatory");
+            return false;
+        }
+        else if(b.length<10||b.length>10)
+        {
+            alert("Number should be of 10 digit! Please enter valid Number");
+            return false;
+        }
+        else if (isNaN(b))
+        {
+            alert("Only Numbers  allowed! Please enter valid number");
+            return false;
+        }
+        else if(c!=d)
+        {
+            alert("Please enter the same password");
+            return false;
+        }
+        else{
+            true;
+        }
+        }
+    </script>
+
+    <form onsubmit="return data()" action="Activity6.html">
+        User ID:<br>
+        <input type="text" id="n1"><br>
+        Mobile Number:<br>
+        <input type="text" id="n2"><br>
+        Password:<br>
+        <input type="Password" id="n3"><br>
+        Confirm Password:<br>
+        <input type="Password" id="n4"><br>
+        <input type="Submit" value="submit now">
+    </form>
+</body>
+</html>
